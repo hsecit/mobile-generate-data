@@ -1,3 +1,0 @@
-flask
-Faker
-bitcoinaddress
