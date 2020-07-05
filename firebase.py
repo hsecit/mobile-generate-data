@@ -18,4 +18,14 @@ def store_account(uid, account_info):
     db = fire.database()
     ref = db.child("accounts").child(uid)
     ref.push(account_info)
+    
 
+# db = fire.database()
+
+# ref = db.child("accounts").child("B4id8gbVZIapozFPKUye972iSEm2").get()
+# t= ref.val()
+
+# t1 = t.items()
+
+# key,value=list(t1)
+# print(key)

@@ -28,7 +28,7 @@ def generate_account_info():
         "nom": f.name(),
         "phone": f.phone_number(),
         "address": f.address(),
-        "bank_account_number": random_digits(24),
+        "bank_account_number": str(random_digits(24)),
         "wallet": blockchain_address()
     }
     #return json.dumps(data)
