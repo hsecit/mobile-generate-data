@@ -15,14 +15,14 @@ def store_fire_base(uid):
     return "succeed"
 
 
-@app.route('/api/blockchain/transction',methods=['POST'])
+@app.route('/api/blockchain/transaction',methods=['POST'])
 def get_blockchain_transaction():
     store_BlockChain_Transaction(request.get_json())
     return "succes"
 
 
 
-@app.route('/api/bank/transction',methods=['POST'])
+@app.route('/api/bank/transaction',methods=['POST'])
 def get_bank_transaction():
     store_Bank_Transaction(request.get_json())
     return "succes"
