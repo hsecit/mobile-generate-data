@@ -1,6 +1,6 @@
 from flask import Flask,request
 from gen_fake_data import generate_account_info
-from firebase import store_account
+from firebase import store_account,store_BlockChain_Transaction,store_Bank_Transaction
 app = Flask(__name__)
 
 
