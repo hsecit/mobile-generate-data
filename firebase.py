@@ -18,7 +18,17 @@ def store_account(uid, account_info):
     db = fire.database()
     ref = db.child("accounts").child(uid)
     ref.push(account_info)
-    
+
+
+def store_Bank_Transaction(data):
+    db= fire.database()
+    ref = db.child("Bank").child("transactions")
+    ref.push(data)
+
+def store_BlockChain_Transaction(data):
+    db= fire.database()
+    ref = db.child("Bank").child("transactions")
+    ref.push(data)
 
 # db = fire.database()
 
