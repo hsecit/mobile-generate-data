@@ -1,6 +1,6 @@
 import pyrebase
 import requests
-CONNECTED_NODE_ADDRESS = "http://127.0.0.1:8000"
+CONNECTED_NODE_ADDRESS = "https://node-blockchain-1.herokuapp.com/"
 
 # init firebase
 conf = {
