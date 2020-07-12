@@ -1,5 +1,5 @@
 import pyrebase
-
+import requests
 CONNECTED_NODE_ADDRESS = "http://127.0.0.1:8000"
 
 # init firebase
