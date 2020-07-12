@@ -27,7 +27,7 @@ def store_Bank_Transaction(data):
 
 def store_BlockChain_Transaction(data):
     db= fire.database()
-    ref = db.child("Bank").child("transactions")
+    ref = db.child("BlockChain").child("transactions")
     ref.push(data)
 
 # db = fire.database()
