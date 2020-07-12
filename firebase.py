@@ -31,7 +31,7 @@ def store_BlockChain_Transaction(data):
     new_tx_address = "{}/new_transaction".format(CONNECTED_NODE_ADDRESS)
 
     requests.post(new_tx_address,
-                  json=post_object,
+                  json=data,
                   headers={'Content-type': 'application/json'})
 
     db= fire.database()
