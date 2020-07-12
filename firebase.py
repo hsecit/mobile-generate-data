@@ -1,5 +1,7 @@
 import pyrebase
 
+CONNECTED_NODE_ADDRESS = "http://127.0.0.1:8000"
+
 # init firebase
 conf = {
     "apiKey": "AIzaSyDi8BQjZHM0l2n1tEX5DukmyE0jQ2kctEQ",
@@ -26,6 +28,12 @@ def store_Bank_Transaction(data):
     ref.push(data)
 
 def store_BlockChain_Transaction(data):
+    new_tx_address = "{}/new_transaction".format(CONNECTED_NODE_ADDRESS)
+
+    requests.post(new_tx_address,
+                  json=post_object,
+                  headers={'Content-type': 'application/json'})
+
     db= fire.database()
     ref = db.child("BlockChain").child("transactions")
     ref.push(data)
