@@ -2,7 +2,7 @@ import json
 import random
 
 from faker import Faker
-
+from hashlib import sha256
 from wallet_blockchain import blockchain_address
 
 
@@ -33,4 +33,9 @@ def generate_account_info():
     }
     #return json.dumps(data)
     return data
+
+def generate_one_time_password():
+    digit = str(random_digits(8)).encode('utf8')
+    hash_ = sha256(digit).hexdigest()
+    return hash_
 
