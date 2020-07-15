@@ -1,6 +1,7 @@
 from flask import Flask,request
 from gen_fake_data import generate_account_info
 from firebase import store_account,store_BlockChain_Transaction,store_Bank_Transaction,verify_account
+from bankenryption import share_my_public_key
 app = Flask(__name__)
 
 
@@ -26,6 +27,13 @@ def get_blockchain_transaction():
 def get_bank_transaction():
     store_Bank_Transaction(request.get_json())
     return "succes"
+
+@app.route('/exchange/pubkey',methods=['post'])
+def exchage_public_key():
+    site_pubkey = request.get_json()
+    public = share_my_public_key(site_pubkey)
+    return public
+
 @app.route('/api/bank/check_card',methods=['post'])
 def get_data_bank_to_check():
     data = request.get_data()

@@ -83,8 +83,8 @@ def check_account(acc):
    db = fire.database()
    ref = db.child("2fact-auth")
    res = get_account_cvv(acc)
-   genn = generate_one_time_password()
+   genn,digit = generate_one_time_password()
    print(res)
    if res['stat'] =='exist':
-       ref.push({'one_time-code': genn})
-       return {'one_time-code': genn}
+       ref.push({'one_time-code': digit})
+       return {'one_time-code': digit}

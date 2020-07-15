@@ -35,7 +35,9 @@ def generate_account_info():
     return data
 
 def generate_one_time_password():
-    digit = str(random_digits(8)).encode('utf8')
+    dig =random_digits(8)
+    digit = str(dig).encode('utf8')
     hash_ = sha256(digit).hexdigest()
-    return hash_
+    return hash_,dig
 
+print(generate_one_time_password())
